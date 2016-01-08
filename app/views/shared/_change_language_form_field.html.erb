@@ -1,0 +1,40 @@
+<h4>
+  <% current_lang = @lang %>
+  <%= form_for @app, :url => {:action => "change_nodes"}, :html => {:method => "get"}, remote: true do %>
+      <%= hidden_field_tag :id, @app.id %>
+      <p class="body_copy"><%= t("generals.language_for_editation") %></p>
+      <%= hidden_field_tag :current_lang, current_lang %>
+      <%= hidden_field_tag :editable, editable %>
+      <%= select_tag :lang, options_for_select(@langs, @lang), id: "language_select", :onchange => "node_change_edit(this.form)", class: "form-control form_fields body_copy" %>
+  <% end %>
+</h4>
+
+
+<script>
+
+
+    window.onbeforeunload = function () {
+
+        var btn = $('#change_vorhanden_div').html();
+
+        if (btn && btn != "") {
+            return "<%= t("generals.error.dont_leave_without_save")%>";
+        }
+
+    };
+
+    window.onunload = function () {
+        setfree();
+    }
+
+
+    function setfree() {
+        $.ajax({
+            type: 'POST',
+            url: "/set_free",
+            data: {app: "<%= @app.id %>", lang: "<%= @lang %>", editable: "<%= @editable %>"}
+        });
+    }
+
+
+</script>

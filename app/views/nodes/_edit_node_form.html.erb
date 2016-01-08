@@ -1,0 +1,11 @@
+<%= f.fields_for node, index: node.id do |n| %>
+    <%= n.text_area :title,
+                    class: "form_control text_area body_copy",
+                    :onchange => "field_change("+node.id.to_s+")",
+                    :onkeyup => "field_change("+node.id.to_s+")",
+                    :id => "text_area_"+node.id.to_s %>
+<% end %>
+
+
+
+

@@ -1,0 +1,14 @@
+<% if object.errors.any? %>
+    <div id="error_explanation">
+      <div class="error_field ">
+        <p class="body_copy"><%=t("generals.error.your_input_contains")%>: <%= pluralize(object.errors.count, "") %></p>
+
+        <ul>
+          <% object.errors.full_messages.each do |msg| %>
+              <li class="body_copy"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <% object.errors.clear %>
+<% end %>

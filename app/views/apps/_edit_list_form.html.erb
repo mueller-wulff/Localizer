@@ -1,0 +1,41 @@
+<% @editable = false %>
+<% if !check_language_in_work(@lang, @app) %>
+
+    <% @editable = true %>
+
+    <% lang = @app.languages.find_by(title: @lang) %>
+    <% lang.in_work = true %>
+    <% lang.update_attributes(in_work: true, updated_at: Time.now) %>
+    <% lang.save %>
+    <% puts lang.updated_at.localtime %>
+    <% puts Time.now %>
+    <% puts "Sprache #{lang.title} gesperrt! -> #{lang.in_work}" %>
+
+<% end %>
+
+<%= render "/shared/change_language_form", editable: @editable %>
+<%= render "/shared/node_edit_information" %>
+<%= render 'export_file_form' %>
+
+<% if @editable %>
+
+
+    <%= form_for @node, url: {controller: "nodes", action: "update"}, method: :put, html: {multipart: true}, remote: true do |f| %>
+
+
+        <% @node.subnodes.each do |node| %>
+
+            <%= render "/nodes/edit_start", node: node, f: f %>
+
+        <% end %>
+
+    <% end %>
+
+    <%= render "/shared/save_all_changed_nodes" %>
+
+
+<% else %>
+    <%= render "/shared/language_in_editation" %>
+<% end %>
+
+<%= javascript_include_tag "node_change_helper" %>

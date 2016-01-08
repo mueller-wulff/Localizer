@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+      <%= form_for Collaboration.new do |f| %>
+
+
+            <p class="section_title"><%=t("generals.new_collaboration")%></p>
+
+          <p class="body_copy"><%=t("generals.new_collaboration_info")%></p>
+
+            <p class="body_copy"><%=t("generals.collaboration_title")%> </p>
+            <%= f.text_field :title, class:"form-control form_fields body_copy" %>
+
+            <p class="body_copy"><%=t("activerecord.attributes.collaboration.baselang")%> </p>
+            <%= f.select(:baselang,
+                         load_languages(@app),
+                         {:prompt => t("generals.please_select_language")},
+                         class: "form-control form_fields body_copy"
+                ) %>
+
+            <p class="body_copy"><%=t("generals.editable_languages")%>: </p>
+            <p class=""> <%= f.select(:lang,
+                         load_languages(@app),
+                         {:prompt => t("generals.please_select_languages")},
+                         {:multiple => true, :size => 5}
+
+                ) %></p>
+
+            <%= f.hidden_field :app_id, :value => @app.id %>
+            <button type="button" class="normal_button" onclick="coll_add(this.form)"><%=t("generals.button.create_collaboration")%></button>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding_td_5">
+            <%= render 'shared/error_messages', object: @coll %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

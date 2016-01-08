@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding_td_5 text-center">
+      <% if logged_in? %>
+          <p class="section_title padding_bottom_20"><%= link_to t("generals.button.new_project"), new_app_path %></p>
+
+          <p class="section_title padding_bottom_20"><%= link_to t("generals.button.my_projects"), current_user %></p>
+
+          <% if current_user.admin? %>
+
+              <p class="section_title padding_bottom_20"><%= link_to t("generals.button.all_projects"), apps_path %></p>
+
+              <p class="section_title padding_bottom_20"><%= link_to t("generals.button.all_users"), users_path %></p>
+          <% end %>
+          <p class="section_title padding_bottom_20"><%= link_to t("generals.button.edit_account"), edit_user_path(current_user) %></p>
+
+          <p class="section_title padding_bottom_20"><%= link_to t("generals.button.logout"), logout_path, method: "delete" %></p>
+      <% else %>
+          <p class="section_title padding_bottom_20"><%= link_to t("generals.button.login"), login_path %></p>
+
+      <% end %>
+      <p class="section_title padding_bottom_20"></p>
+      <p class="section_title padding_bottom_20"></p>
+      <p class="section_title padding_bottom_20"><%= link_to t("generals.button.impressum"), impressum_path %></p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,12 @@
+<% provide(:title, 'All users') %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title margin_bottom_20"><%=t("generals.user.all_users")%></p>
+    </div>
+      <%= will_paginate %>
+        <%= render @users %>
+      <%= will_paginate %>
+
+  </div>
+</div>

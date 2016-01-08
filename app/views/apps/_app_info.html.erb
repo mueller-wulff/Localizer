@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title"><%=t("generals.app_info.projekt")%>: <%= @app.title %></p>
+
+      <div class="margin_bottom_10 text_field padding_lr_10 padding_td_5">
+
+        <p class="body_copy no_margin no_padding"><%=t("generals.app_info.plattform")%>: <%= @app.plattform %></p>
+
+        <p class="body_copy no_margin no_padding"><%=t("generals.app_info.project_id")%>: <%= @app.id %></p>
+
+        <p class="body_copy no_margin no_padding"><%=t("generals.app_info.creator")%>: <%= @app.user.name %></p>
+
+
+        <% if @app.plattform == 'xml' %>
+            <p class="body_copy no_margin no_padding"><%=t("generals.app_info.tags")%>: <%= @node.subnodes.where(list: false).count %></p>
+
+            <p class="body_copy no_margin no_padding"><%=t("generals.app_info.array_lists")%>: <%= @node.subnodes.where(list: true).where(listtype: 'string-array').count %></p>
+
+            <p class="body_copy no_margin no_padding"><%=t("generals.app_info.plurals")%>: <%= @node.subnodes.where(list: true).where(listtype: 'plurals').count %></p>
+        <% end %>
+
+        <% if @app.plattform == 'strings' %>
+            <p class="body_copy no_margin no_padding"><%=t("generals.app_info.tags")%>: <%= @node.subnodes.where(list: false).count %></p>
+        <% end %>
+
+        <% if @app.plattform == 'yml' %>
+
+        <% end %>
+
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+      <p class="body_copy"><%=t("generals.app_info.path_to_project")%></p>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+      <div id="editpath" class="form-control form_fields body_copy text_korrektur"> <%= load_app_edit_path(@app) %>
+      </div>
+      <button class='copy-button normal_button' data-clipboard-target='editpath' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Click me to copy to clipboard.'>
+        <%=t("generals.copy_path")%>
+      </button>
+
+    </div>
+  </div>
+
+
+</div>
+
+<%= javascript_include_tag "clipboard_helper" %>

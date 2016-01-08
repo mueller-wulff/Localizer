@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title><%= t("generals.title") %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+
+
+<body class="body">
+<script>
+    function change_vorhanden_info() {
+        $('#change_vorhanden_div').html('<%=t("generals.change_has_been_made")%>');
+    }
+</script>
+<div id="header_box">
+  <% if @title.nil? %>
+      <%= render 'layouts/header' %>
+  <% else %>
+      <%= render 'layouts/header_menu' %>
+  <% end %>
+</div>
+
+
+<div class="content_body">
+  <div class="container">
+    <div class="row">
+
+      <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>">
+            <%= message %>
+          </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </div>
+
+  <%- #debug(params) if Rails.env.development?                -%>
+  <%= render 'layouts/footer' %>
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+    var timerID;
+
+    var url = window.location.toString();
+
+    if (url.indexOf("collaborations") > -1 || (url.indexOf("apps") > -1 && url.indexOf("edit") > -1)) {
+
+        timerID = setInterval(function () {
+            if (url.indexOf("collaborations") > -1 || (url.indexOf("apps") > -1 && url.indexOf("edit") > -1)) {
+                save_all_changes();
+            } else {
+
+            }
+        }, 60 * 1000);
+
+    } else {
+        clearInterval(timerID);
+        window.onbeforeunload = function () {
+        };
+    }
+
+
+    function infofield() {
+        $('#in_bearbeitung_div').html('<%=t("generals.create_new_language_wait_information")%>');
+    }
+
+    function infofield_2() {
+        $('#in_bearbeitung_div').html('<%=t("generals.create_new_project_wait_information")%>');
+    }
+
+    function add_additional_file_info() {
+        $('#add_additional_file_info').html('<%=t("generals.add_language_wait_information")%>');
+    }
+    function infofield_edit() {
+        $('#in_bearbeitung_div').html('<%=t("generals.load_edit_language_wait_information")%>');
+    }
+
+
+</script>
+
+</html>

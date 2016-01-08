@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title"><%=t("generals.user.my_projects")%></p>
+      <p class="body_copy"><%= @user.name %></p>
+    </div>
+    <%= render @user.apps.all %>
+  </div>
+</div>
+
+

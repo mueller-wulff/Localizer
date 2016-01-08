@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+
+    <div id="app_info" class="padding_td_5">
+      <%= render 'app_info' %>
+    </div>
+
+    <div id="list_languages" class="padding_td_5">
+      <%= render 'list_languages' %>
+    </div>
+
+    <div id="add_language_form" class="padding_td_5">
+      <%= render 'add_language_form' %>
+    </div>
+
+    <div id="add_additional_file_form" class="padding_td_5">
+      <%= render 'add_additional_file_form' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 margin_bottom_20">
+      <p class="section_title"><%=t("generals.export_edit_translations")%></p>
+      <p class="body_copy"><%=t("generals.export_edit_translations_info")%></p>
+      <%= button_to t("generals.button.export_edit"), edit_app_path, method: :get, class: "normal_button"%>
+    </div>
+
+
+    <div id="add_collaboration_form" class=" margin_bottom_20">
+      <%= render 'collaborations/new_form' %>
+    </div>
+
+    <div id="list_collaboration_form" class="">
+      <%= render 'collaborations/list_collaboration' %>
+    </div>
+
+
+  </div>
+</div>
+

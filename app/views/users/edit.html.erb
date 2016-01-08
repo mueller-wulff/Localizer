@@ -1,0 +1,29 @@
+<% provide(:title, "Edit user") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title margin_bottom_20"><%=t("generals.user.edit_account")%></p>
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :name, class:"body_copy" %>
+        <%= f.text_field :name, class: 'form-control form_fields body_copy' %>
+
+        <%= f.label :email, class:"body_copy" %>
+        <%= f.email_field :email, class: 'form-control form_fields body_copy' %>
+
+        <%= f.label :password, class:"body_copy" %>
+        <%= f.password_field :password, class: 'form-control form_fields body_copy' %>
+
+        <%= f.label :password_confirmation, class:"body_copy" %>
+        <%= f.password_field :password_confirmation, class: 'form-control form_fields body_copy' %>
+
+        <%= f.submit t("generals.button.save_changes"), class: "normal_button margin_top_10" %>
+    <% end %>
+
+
+  </div>
+</div>
+</div>
+</div>

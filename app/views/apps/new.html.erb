@@ -1,0 +1,46 @@
+<%= form_for @app do |f| %>
+
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5 ">
+          <p class="section_title margin_bottom_20"><%=t("generals.create_new_project")%></p>
+
+          <p class="body_copy margin_td_10"><%=t("generals.following_formats_are_supported")%></p>
+
+          <div class="margin_bottom_20 text_field padding_lr_10 padding_td_5">
+            <p class="body_copy padding_td_5 "><%=t("generals.supported_formats.android")%></p>
+
+            <p class="body_copy padding_td_5 "><%=t("generals.supported_formats.xcode")%></p>
+
+            <p class="body_copy padding_td_5 "><%=t("generals.supported_formats.ruby")%></p>
+
+          </div>
+          <p class="body_copy margin_top_10 margin_bottom_20"><%=t("generals.need_time_while_upload")%></p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+
+          <div class="padding_td_5">
+            <p class="body_copy no_padding no_margin"><%=t("generals.give_name_of_project")%></p>
+            <%= f.text_field :title,  class:"form-control form_fields body_copy no_margin" %>
+          </div>
+          <div class="margin_td_10">
+            <p class="body_copy no_padding no_margin"><%=t("generals.give_datafile_of_project")%></p>
+            <%= f.file_field :file %>
+          </div>
+          <div class="padding_td_5">
+            <p class="body_copy no_padding no_margin"><%=t("generals.language_of_datafile")%></p>
+            <%= f.text_field :lang, class:"form-control form_fields body_copy no_margin" %>
+          </div>
+          <div class="padding_td_5 margin_top_20 margin_bottom_10">
+            <%= f.submit t("generals.button.start"), :onclick => "infofield_2()", class:"normal_button " %>
+          </div>
+          <div class="">
+            <div id="in_bearbeitung_div" class="in_bearbeitung_div"></div>
+          </div>
+
+          <%= render 'shared/error_messages', object: f.object %>
+
+      </div>
+
+
+<% end %>
+
+<%= javascript_include_tag "node_change_helper" %>

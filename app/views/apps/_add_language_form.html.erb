@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <%= form_for @app, :url => {:action => "add_language"}, :html => {:method => "get"}, remote: true do |f| %>
+
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 ">
+          <p class="section_title padding_td_5"><%=t("generals.add_translation")%></p>
+          <p class="body_copy"><%=t("generals.add_translation_info")%></p>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+          <%= text_field_tag :lang ,nil, class:"form-control form_fields body_copy"%>
+
+          <button type="button" id="node_change_button" class="normal_button" onclick="node_change(this.form)"><%=t("generals.button.add_language")%></button>
+        </div>
+
+        <div id="in_bearbeitung_div" class="in_bearbeitung_div col-xs-12 col-sm-12 col-md-12 col-lg-12 padding_td_5">
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+          <div class="error">
+
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

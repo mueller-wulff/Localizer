@@ -1,0 +1,11 @@
+<%= form_for @app, :url => {:action => "export_file"}, :html => {:method => "get"} do |f| %>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding_td_5">
+      <p class="section_title"><%=t("generals.export_file")%></p>
+      <p class="body_copy"><%=t("generals.export_file_info")%></p>
+      <%= hidden_field_tag :id, @app.id %>
+      <%= hidden_field_tag :lang, @lang %>
+        <p class="body_copy"><%=t("generals.language")%>: <b><%= @lang %></b></p>
+        <%= f.submit t("generals.download"),class: "normal_button"%>
+    </div>
+<% end %>

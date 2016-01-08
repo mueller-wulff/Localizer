@@ -1,0 +1,16 @@
+#header{
+  min-height: 100px;
+  height: auto;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header_text{
+  color: $text_color;
+}
+
+.main_header{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 46px;
+  color: $text_color;
+}

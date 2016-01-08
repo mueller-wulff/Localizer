@@ -1,0 +1,347 @@
+en:
+  activerecord:
+    models:
+      app: "Project"
+    attributes:
+      app:
+        file: "File"
+        language: "Language"
+        lang: "Language"
+        title: "Name"
+        fileformat: "Fileformat"
+        unknown: "Unknown"
+        encoding: "encoding"
+      collaboration:
+        baselang: "Base language"
+        lang: "Language"
+        title: "Description"
+      user:
+        password: "Password"
+        email: "Email"
+        name: "Name"
+        password_confirmation: "Password confirmation"
+  date:
+    abbr_day_names:
+    - "Sun"
+    - "Mon"
+    - "Tue"
+    - "Wed"
+    - "Thu"
+    - "Fri"
+    - "Sat"
+    abbr_month_names:
+    - ""
+    - "Jan"
+    - "Feb"
+    - "Mar"
+    - "Apr"
+    - "May"
+    - "Jun"
+    - "Jul"
+    - "Aug"
+    - "Sep"
+    - "Oct"
+    - "Nov"
+    - "Dec"
+    day_names:
+    - "Sunday"
+    - "Monday"
+    - "Tuesday"
+    - "Wednesday"
+    - "Thursday"
+    - "Friday"
+    - "Saturday"
+    formats:
+      default: "%d %B %Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - ""
+    - "January"
+    - "February"
+    - "March"
+    - "April"
+    - "May"
+    - "June"
+    - "July"
+    - "August"
+    - "September"
+    - "October"
+    - "November"
+    - "December"
+    order:
+    - "year"
+    - "month"
+    - "day"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years:
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes:
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds:
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"
+    prompts:
+      day: "Day"
+      hour: "Hour"
+      minute: "Minute"
+      month: "Month"
+      second: "Second"
+      year: "Year"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      encodings:
+        xml: "for \".xml\" must be \"UTF-8\""
+        yml: "for \".yml\" must be \"UTF-8\""
+        strings: "for \".strings\" must be \"UTF-8\" oder \"UTF-16\""
+      accepted: "must be accepted"
+      blank: "can't be blank"
+      present: "must be blank"
+      confirmation: "doesn't match %{attribute}"
+      empty: "can't be empty"
+      empty_text: "can't be empty"
+      choose_file: "must be choosen"
+      unknown_error: "error"
+      wrong_fileformat: "must be the same as the first file you uploaded"
+      equal_to: "must be equal to %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "is not included in the list"
+      invalid: "is invalid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      odd: "must be odd"
+      record_invalid: "Validation failed: %{errors}"
+      restrict_dependent_destroy:
+        one: "Record cannot be deleted because a dependent %{record} data set exists"
+        many: "Record cannot be deleted because a dependent %{record} data set exist"
+      taken: "is already been assigned"
+      too_long:
+        one: "is too long (maximum is 1 character)"
+        other: "is too long (maximum is %{count} characters)"
+      too_short:
+        one: "is too short (minimum is 1 character)"
+        other: "is too short (minimum is %{count} characters)"
+      wrong_length:
+        one: "is the wrong length (should be 1 character)"
+        other: "is the wrong length (should be %{count} characters)"
+      other_than: "can't be equal %{count}"
+    template:
+      body: "Please check the following fields:"
+      header:
+        one: "An error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision:
+        separator: "."
+        significant:
+        strip_insignificant_zeros:
+        unit: "€"
+    format:
+      delimiter: ","
+      precision:
+      separator: "."
+      significant:
+      strip_insignificant_zeros:
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: "Billion"
+          million: "Million"
+          quadrillion: "Quadrillion"
+          thousand: "Thousand"
+          trillion: "Trillion"
+          unit: ""
+      format:
+        delimiter: ""
+        precision:
+        significant:
+        strip_insignificant_zeros:
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          gb: "GB"
+          kb: "KB"
+          mb: "MB"
+          tb: "TB"
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: "am"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: "pm"
+  will_paginate:
+    page_gap: "&hellip;"
+    previous_label: "Previous page"
+    next_label: "Next page"
+  generals:
+    title: "Localizer"
+    wrong_password: "Wrong username or password. Please try again."
+    user_deleted: "User deleted"
+    profile_updated: "Settings saved"
+    please_log_in: "Please log in"
+    options: "Options:"
+    impressum: "About"
+    edit_tutorial_1: "All changes are saved automatically every 2 minutes."
+    edit_tutorial_2: "Entries like \"%d %b %H:%M\" or \"%{count}\" are special systemkeywords and should not be changed."
+    edit_tutorial_3: "In '<' and '>' bracketed words are HTML-tags and can be ignored."
+    edit_tutorial_4: "Title's of categories and (sub)categories don't need to be translated. They serve only to illustrate the context."
+    app_information: "The Localizer-App helps you to create and manage your language files (localization files) of XCode-, Rails- and Android projects."
+    language_options: "Language options"
+    submission_language: "Template language"
+    system_keywords: "System keywords"
+    language_for_editation: "Language ​​for editing:"
+    remind_me: "stay logged in"
+    are_you_new: "New here?"
+    developed_by: "Developed by:"
+    new_collaboration: "New collaboration"
+    new_collaboration_info: "Here you can create additional collaborations. To do this, select a language as a base language and one or more languages to translate where necessary."
+    collaboration_title: "Description:"
+    please_select_language: "Please select language"
+    please_select_languages: "Please select languages"
+    collaborations: "Collaborations"
+    copy_link_and_send: "Copy the link and send it to the editors in charge of translation."
+    no_collaboration: "No collaboration available, please create a new one"
+    collaboration: "Collaboration:"
+    editable_languages: "Languages ​​for editing:"
+    path: "Path"
+    copy_path: "Copy path"
+    export_edit_translations: "Edit and export translations"
+    export_edit_translations_info: "Here you can display existing translations and export. To do this, select a base language and more languagaes as translatable languages​​ if necessary"
+    create_new_project: "Create new project"
+    following_formats_are_supported: "The following file types and encodings are supported:"
+    need_time_while_upload: "The upload can take some time depending on the amount of items, please be patient. You will be forwarded automatically."
+    give_name_of_project: "Enter the name of the project:"
+    give_datafile_of_project: "Enter the template file:"
+    language_of_datafile: "Language of the original file:"
+    all_projects: "All projects"
+    all_projects_info: "Here you can view or delete all projects."
+    translations: "Translations"
+    available: "Available"
+    export_file: "File export"
+    export_file_info: "Here you can download the edited translation to integrate them into your system."
+    language: "Language"
+    download: "Download"
+    translation: "Translation"
+    category: "(Sub)-category"
+    to_project: "To project"
+    add_translation: "Add translation"
+    add_translation_info: "Here you can add languages to the list of translations. You can then send those to an editor in a collaboration."
+    add_translation_via_datafile: "Add translation via file"
+    only_files_with: "Only files with the extension"
+    are_addable: "can be added."
+    prefer_entrys_in_datafile: "Prefer file entries and overwrite in the system. If the language already exist, existing content is overwritten in the project."
+    create_new_language_wait_information: "New language is created, this site is updated after completion of the process."
+    create_new_project_wait_information: "Project is created, this page is updated after completion of the process."
+    add_language_wait_information: "Operation is carried out, this site is updated after completion of the process."
+    load_edit_language_wait_information: "Selected language is loading, this page is updated after completion of the process."
+    change_has_been_made: "Changes must be saved."
+    language_blocked: "This language is locked by another user or system. Please try again in 2 minutes or later."
+    app_info:
+      projekt: "Project"
+      plattform: "Platform"
+      project_id: "Project_ID"
+      creator: "Creator"
+      tags: "Tags"
+      array_lists: "Array-lists"
+      plurals: "Plurals"
+      path_to_project: "Path to project"
+    supported_formats:
+      android: "Android: '.xml' in 'UTF-8'"
+      xcode: "XCode: '.strings' in 'UTF-8' and 'UTF-16' (experimental)"
+      ruby: "Ruby: '.yml' in 'UTF-8'"
+    error:
+      dont_leave_without_save: "If you leave this page unsaved changes will be lost. "
+      are_you_shure: "Are you sure?"
+      your_input_contains: "Your input contains errors"
+    user:
+      my_projects: "My projects"
+      create_new_account: "Create new account"
+      all_users: "All users"
+      edit_account: "Edit account"
+      informations: "Information:"
+      id: "ID:"
+      apps: "Projects"
+    button:
+      create_account: "Create account"
+      save_changes: "Save changes"
+      delete: "Delete"
+      new_project: "Create project"
+      my_projects: "My projects (overview)"
+      all_projects: "All projects (overview)"
+      all_users: "All users (overview)"
+      edit_account: "Edit account"
+      logout: "Log out"
+      login: "Log in"
+      impressum: "About"
+      save_all_changes: "Save all changes"
+      show_last_version: "View latest version"
+      fade_out_last_version: "Fade out last verion"
+      reset_changes: "Reset changes"
+      create_collaboration: "Create collaboration"
+      export_edit: "Edit and export"
+      start: "Start"
+      back_to_project: "Back to project"
+      add_language: "Add language"
+      upload_file: "Upload file"

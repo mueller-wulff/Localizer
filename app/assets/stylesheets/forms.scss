@@ -1,0 +1,141 @@
+.form_fields {
+  margin-bottom: 10px;
+  background-color: $background_color;
+  border-color: $border_color;
+  border-radius: 0;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.form_control {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding-left: 5px !important;
+}
+
+.padding_td_5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.margin_td_5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.right_alignt {
+  text-align: right;
+}
+
+.border_nice {
+  border-bottom: 1px solid $border-color;
+}
+
+.field_100_min {
+  min-height: 100px;
+}
+
+.in_bearbeitung_div {
+  font-size: 1.5em;
+  color: $text_color;
+  font-style: inherit;
+}
+
+.text_area {
+  min-height: 90px;
+  margin-bottom: 10px;
+  background-color: $background_color;
+  border-color: $border_color;
+  border-radius: 0;
+  border-style: solid;
+}
+
+.site_padding_2 {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.change_vorhanden_div {
+  font-size: 60px;
+  color:  $text_color;
+  vertical-align: middle;
+  height: 80px;
+  line-height: 80px;
+}
+
+.small_button {
+  height: 35px;
+  width: 35px;
+  padding: 0px;
+  border  : 1px solid $border-color;
+  background-size: 100%;
+}
+
+
+.save_button {
+  background-image: url("/images/layout_rapid_rabbit/speichern.png");
+}
+
+.reset_button {
+  background-image: url("/images/layout_rapid_rabbit/zuruecksetzen.png");
+}
+
+.spoiler_button{
+  width: 97.5% !important;
+}
+
+.spoiler_button:disabled, #node_change_button:disabled{
+  color: $border-color !important;
+  background-color: $text_field_color !important;
+}
+
+.left_button{
+  margin-right: 2.5%;
+}
+
+.right_button{
+  margin-left: 2.5%;
+}
+
+@media only screen and (min-width: 1912px),
+only screen and (min-device-width: 1912px) {
+
+}
+
+@media only screen and (max-width: 1911px),
+only screen and (max-device-width: 1911px) {
+
+}
+
+@media only screen and (max-width: 1199px),
+only screen and (max-device-width: 1199px) {
+
+}
+
+@media only screen and (max-width: 991px),
+only screen and (max-device-width: 991px) {
+
+  .change_vorhanden_div {
+    font-size: 30px;
+    color: $text_color;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 30px;
+  }
+
+}
+
+@media only screen and (max-width: 767px),
+only screen and (max-device-width: 767px) {
+
+  .change_vorhanden_div {
+    font-size: 30px;
+    color: $text_color;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 30px;
+  }
+
+}

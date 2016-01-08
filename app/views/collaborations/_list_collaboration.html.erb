@@ -1,0 +1,39 @@
+# encoding: UTF-8
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title"><%=t("generals.collaborations")%></p>
+
+      <p class="body_copy"><%=t("generals.copy_link_and_send")%></p>
+      <% if @colls.size == 0 %>
+          <p class="body_copy"><%=t("generals.no_collaboration")%></p>
+      <% end %>
+
+
+      <% @colls.each do |c| %>
+          <div class="margin_bottom_10 text_field padding_lr_10 padding_td_5">
+            <p class="body_copy"><%=t("generals.collaboration")%> <%= c.id %></p>
+
+            <p class="body_copy"><%=t("activerecord.attributes.collaboration.title")%>: <%= c.title %></p>
+
+            <p class="body_copy"><%=t("activerecord.attributes.collaboration.baselang")%>: <%= c.baselang %></p>
+
+            <p class="body_copy"><%=t("generals.editable_languages")%> <%= c.lang.gsub(";", ", ") %></p>
+
+            <p class="body_copy"><%=t("generals.path")%></p>
+
+            <div id="editpath<%= c.id %>" class="form-control form_fields body_copy text_korrektur"> <%= load_collaboration_edit_path(c) %> </div>
+            <div class="">
+              <button class='copy-button normal_button' data-clipboard-target='editpath<%= c.id %>' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Click me to copy to clipboard.'>
+                <%=t("generals.copy_path")%>
+              </button>
+            </div>
+            <hr>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "clipboard_helper" %>

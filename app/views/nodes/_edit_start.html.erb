@@ -1,0 +1,34 @@
+<% def output(node, f) %>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  field_100_min padding_td_5">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 site_padding_2">
+        <p class="body_copy"><%= node.title %></p>
+        <% if current_user.admin? %>
+            <p><%= node.subnodes.count %></p>
+        <% end %>
+      </div>
+
+      <%= render "nodes/edit_field", node: node, f: f %>
+
+    </div>
+<% end %>
+
+<% def check_list(s, f) %>
+
+    <% if s.list %>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <p class="body_copy_category"><%= t("generals.category") %>: <%= s.title %></p>
+        </div>
+        <% s.subnodes.each do |ns| %>
+            <% check_list(ns, f) %>
+        <% end %>
+    <% else %>
+        <% output(s, f) %>
+    <% end %>
+<% end %>
+
+
+<% node.subnodes.each do |s| %>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin_bottom_10 margin_top_20">
+    </div>
+    <% check_list(s, f) %>
+<% end %>

@@ -1,0 +1,16 @@
+# encoding: UTF-8
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title padding_td_5"><%=t("generals.translations")%> </p>
+
+      <p class="body_copy"><%=t("generals.available")%>:  <%= load_languages(@app).size %></p>
+
+      <div class="margin_bottom_10 text_field padding_lr_10 padding_td_5">
+        <% load_languages(@app).each do |s| %>
+            <p class="body_copy no_margin no_padding"><%= s %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

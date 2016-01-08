@@ -1,0 +1,24 @@
+<%= form_for @app do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div>
+      <%= f.label :title, t("generals.give_name_of_project") %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div>
+      <%= f.label :title, t("generals.give_datafile_of_project") %>
+      <%= f.file_field :file %>
+    </div>
+
+    <div>
+      <%= f.label :title, t("generals.language_of_datafile") %>
+      <%= text_field_tag :lang %>
+    </div>
+
+    <div>
+      <%= f.submit t("generals.button.start") %>
+    </div>
+
+<% end %>

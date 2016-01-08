@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+      <p class="section_title"><%=t("generals.add_translation_via_datafile")%></p>
+
+      <p class="body_copy"><%=t("generals.only_files_with")%> "<b><%= @app.plattform %></b>" <%=t("generals.are_addable")%>
+      </p>
+
+
+      <%= form_for @app, :url => {:action => "add_additional_file"}, :multipart => true, :html => {:method => "post"}, remote: true do |f| %>
+
+          <p class="body_copy"><%= f.label :title, t("generals.language_of_datafile") %></p>
+
+          <%= f.text_field :lang, class: "form-control form_fields body_copy" %>
+
+
+
+          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 padding_td_5">
+            <%= f.check_box :override %>
+          </div>
+          <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 padding_td_5">
+            <p class="body_copy"><%= f.label :title, t("generals.prefer_entrys_in_datafile")%></p>
+          </div>
+
+          <p class="body_copy"><%= f.label :title, t("generals.give_datafile_of_project") %></p>
+
+          <div class="margin_td_10"><%= f.file_field :file %></div>
+
+
+          <%= f.submit t("generals.button.upload_file"), class: "normal_button margin_td_10", :onclick => "add_additional_file()" %>
+
+          <div id="add_additional_file_info" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 in_bearbeitung_div padding_td_5">
+          </div>
+
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding_td_5">
+      <div class="error_add_additional_file">
+      </div>
+    </div>
+  </div>
+</div>

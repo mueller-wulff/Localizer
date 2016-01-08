@@ -1,0 +1,22 @@
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding_td_5">
+  <hr>
+  <p class="section_title"><%= link_to user.name, user %></p>
+
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+    <p class="body_copy"><b><%=t("generals.user.informations")%> </b></p>
+
+    <p class="body_copy"> <%= t("generals.user.id")+" "+user.id.to_s %></p>
+
+    <p class="body_copy"><%= t("generals.user.apps") +" "+ user.apps.count.to_s %></p>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+    <p class="body_copy"><b><%=t("generals.options")%> </b></p>
+
+
+    <% if current_user.admin? && !current_user?(user) %>
+        <p class="body_copy"><%= link_to t("generals.button.delete"), user, method: :delete,
+                      data: {:confirm=> t("generals.error.are_you_shure")}, class: ""%></p>
+    <% end %>
+
+  </div>
+</div>

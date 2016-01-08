@@ -1,0 +1,69 @@
+Localizer
+
+This is the Localizer app
+
+
+- provides upload of localisation files for:
+
+    Android: '.xml' in 'UTF-8'
+    XCode: '.strings' in 'UTF-8' and 'UTF-16'
+    Ruby: '.yml' in 'UTF-8'
+
+- make databaseobjects from the entrys in those files
+- provides editing of the entrys
+- provides downloading of the content in the filetype as uploaded
+
+
+Features
+
+- add a new language to the project
+- add new languages to the projects with uploading additional localisation files
+- add a uploaded file, which is changed, again to submit the changes to the database
+- choose baselanguage and editable languages and create collaboration and share them with collaborators (translators)
+
+
+Website
+
+- create a new project
+- edit the project, add more files an languages, add collaborations
+- create new user, also editing
+- view "my projects", view "all projects" (only admin), view "all users" (only admin)
+
+
+TODO
+
+- Documentation
+
+    complete readme
+    comment the code
+
+
+- Code
+
+    refactor to all methods on the right place
+
+
+- Software
+
+    input and output of string must handle LF, CRLF and CR correctly
+
+
+- Features
+
+    support for xcliffer files
+    delete collaborations
+    delete languages
+    add entrys
+    delete entrys
+
+
+- Bug
+
+    removes ":" on strings of "yml" files
+
+
+
+- License
+
+    NPOSL-3.0
+    https://opensource.org/licenses/NPOSL-3.0

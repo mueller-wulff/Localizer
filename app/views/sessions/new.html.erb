@@ -1,0 +1,32 @@
+<% provide(:title, "Log in") %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding_td_5">
+      <p class="section_title padding_bottom_20">Log in</p>
+
+
+      <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.label :email, class: "body_copy" %>
+          <%= f.email_field :email, class: 'body_copy form-control form_fields ' %>
+
+          <%= f.label :password, class: "body_copy" %>
+          <%= f.password_field :password, class: 'body_copy form-control form_fields' %>
+
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+              <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 padding_td_5 no_margin">
+                <%= f.check_box :remember_me, class: "no_padding no_margin" %>
+              </div>
+              <p class="body_copy padding_bottom_20"><%=t("generals.remind_me")%></p>
+          <% end %>
+
+
+          <%= f.submit t("generals.button.login"), class: "normal_button" %>
+      <% end %>
+
+      <p class="body_copy padding_bottom_20"><%=t("generals.are_you_new")%> <%= link_to t("generals.user.create_new_account"), signup_path %></p>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 padding_td_5">
+    </div>
+  </div>
+</div>

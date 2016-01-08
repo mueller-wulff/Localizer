@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<% if node.subnodes.where(lang: @lang).size > 0 %>
+    <% node1 = node.subnodes.where(lang: @lang).first %>
+    <div id="node_edit_area<%= node1.id %>">
+      <div id="node_edit_div<%= node1.id %>">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 site_padding_2">
+
+          <%= render "nodes/edit_node_form", node: node1, f: f %>
+
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 site_padding_2">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 site_padding_2 margin_bottom_10">
+        <script type="text/javascript">
+            function switchspoiler(node) {
+                if (document.getElementById("spoiler" + node).style.display == "none") {
+                    document.getElementById("spoiler" + node).style.display = "";
+                    $("#show_last_version" + node).val("<%=t("generals.button.fade_out_last_version")%>");
+                }
+                else {
+                    document.getElementById("spoiler" + node).style.display = "none";
+                    $("#show_last_version" + node).val("<%=t("generals.button.show_last_version")%>");
+                }
+            }
+        </script>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 no_padding margin_bottom_10">
+          <input type='button' id="show_last_version<%= node1.id %>" class="normal_button spoiler_button left_button" value="<%= t("generals.button.show_last_version") %>" onclick="javascript:switchspoiler('<%= node1.id %>')">
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 no_padding margin_bottom_10">
+          <input disabled type='button' id="reset_button_<%= node1.id %>"
+                 class="normal_button spoiler_button right_button"
+                 value="<%= t("generals.button.reset_changes") %>"
+                 onclick="reset_change_field(<%= node1.id %>)">
+        </div>
+        <div id="spoiler<%= node1.id %>" class="body_copy margin_td_10" style='display:none' data-text="<%= node1.title %>"><%= node1.title %></div>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 site_padding_2 border_nice">
+      </div>
+
+
+      <script>
+          window.onload = field_change(<%= node1.id%>);
+      </script>
+    </div>
+<% else %>
+    LEER
+<% end %>
