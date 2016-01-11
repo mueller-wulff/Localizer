@@ -103,13 +103,15 @@ class App < ActiveRecord::Base
 
 
   def add_language_to_app(lang)
-    if !load_languages(self).include?(lang)
-
+    puts "Add lang: #{lang}"
+    if !self.languages.find_by(:title, lang)
+      puts "Language added"
       l = self.languages.build
       l.title = lang
       l.in_work = false
       l.save
-
+    else
+      puts "Language already exists"
     end
   end
 
